@@ -19,9 +19,8 @@ NativeDialogImpl *nativedialogimpl = [[NativeDialogImpl alloc] init];
   return std::make_shared<facebook::react::NativeDialogSpecJSI>(params);
 }
 
-
-- (void)showDialog:(nonnull NSString *)text resolve:(nonnull RCTPromiseResolveBlock)resolve reject:(nonnull RCTPromiseRejectBlock)reject {
-  return [nativedialogimpl showDialog:text resolve:resolve reject:reject];
+- (void)showDialog:(nonnull NSString *)message positiveLabel:(nonnull NSString *)positiveLabel negativeLabel:(nonnull NSString *)negativeLabel resolve:(nonnull RCTPromiseResolveBlock)resolve reject:(nonnull RCTPromiseRejectBlock)reject {
+  return [nativedialogimpl showDialog:message positiveLabel:positiveLabel negativeLabel:negativeLabel resolve:resolve reject:reject];
 }
 
 @end

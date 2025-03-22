@@ -19,10 +19,10 @@ class NativeDialogModule(reactContext: ReactApplicationContext) : NativeDialogSp
                 .setMessage(message)
                 .setTitle("Alert!")
                 .setPositiveButton(positiveLabel) { _, _ ->
-                    dialogResultPromise?.resolve("Tapped on Positive!")
+                    dialogResultPromise?.resolve("(Android) Tapped on Positive!")
                 }
                 .setNegativeButton(negativeLabel) { _, _ ->
-                    dialogResultPromise?.reject("ERR_NATIVE_DIALOG_REJECTED", "Tapped on Negative!")
+                    dialogResultPromise?.reject("ERR_NATIVE_DIALOG_REJECTED", "(Android) Tapped on Negative!")
                 }
             val dialog: AlertDialog = builder.create()
             dialog.show()
