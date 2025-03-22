@@ -10,7 +10,9 @@ const App = () => {
 			}}
 		>
 			<Button title={'Show'} onPress={() => {
-        NativeDialog?.showDialog('hello')
+        NativeDialog?.showDialog('hello')?.then((res) => {
+          console.log("RESULT : " + res)
+        })
       }}></Button>
 		</View>
 	);
