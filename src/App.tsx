@@ -87,11 +87,11 @@ const App = () => {
 					containerStyle={styles.textFieldSpacing}
 				/>
 			</View>
-			<Pressable style={styles.buttonContainer} onPress={showAlert}>
-				<View style={styles.button}>
+			<View style={styles.buttonContainer}>
+				<Pressable style={styles.button} onPress={showAlert}>
 					<Text style={styles.buttonText}>Show Alert Dialog</Text>
-				</View>
-			</Pressable>
+				</Pressable>
+			</View>
 
 			<View>
 				<Text style={styles.resultTitle}>
