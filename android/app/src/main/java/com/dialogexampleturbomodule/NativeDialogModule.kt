@@ -12,22 +12,20 @@ class NativeDialogModule(reactContext: ReactApplicationContext) : NativeDialogSp
     }
 
     override fun getName() = NAME
-
-    override fun showDialog(text: String?, dialogResultPromise: Promise?) {
+    override fun showDialog(message: String?, positiveLabel: String?, negativeLabel: String?, dialogResultPromise: Promise?) {
         currentActivity?.runOnUiThread {
             val builder: AlertDialog.Builder = AlertDialog.Builder(currentActivity)
             builder
-                .setMessage(text)
-                .setTitle("Alert")
-                .setPositiveButton("Positive") { dialog, which ->
-                    dialogResultPromise?.resolve("YES")
+                .setMessage(message)
+                .setTitle("Alert!")
+                .setPositiveButton(positiveLabel) { _, _ ->
+                    dialogResultPromise?.resolve("Tapped on Positive!")
                 }
-                .setNegativeButton("Negative") { dialog, which ->
-                    dialogResultPromise?.resolve("NO")
+                .setNegativeButton(negativeLabel) { _, _ ->
+                    dialogResultPromise?.reject("ERR_NATIVE_DIALOG_REJECTED", "Tapped on Negative!")
                 }
             val dialog: AlertDialog = builder.create()
             dialog.show()
         }
-
     }
 }

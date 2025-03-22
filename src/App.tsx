@@ -9,11 +9,22 @@ const App = () => {
 				paddingTop: 50,
 			}}
 		>
-			<Button title={'Show'} onPress={() => {
-        NativeDialog?.showDialog('hello')?.then((res) => {
-          console.log("RESULT : " + res)
-        })
-      }}></Button>
+			<Button
+				title={'Show'}
+				onPress={() => {
+					NativeDialog?.showDialog(
+						'Do you like React Native?',
+						'Yes',
+						'No',
+					)
+						?.then((res) => {
+							console.log('RESULT : ' + res);
+						})
+						.catch((err) => {
+							console.log('ERR : ' + err);
+						});
+				}}
+			></Button>
 		</View>
 	);
 };
