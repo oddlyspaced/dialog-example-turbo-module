@@ -1,4 +1,11 @@
-import { Platform, Pressable, Text, View, StyleSheet, StatusBar } from 'react-native';
+import {
+	Platform,
+	Pressable,
+	Text,
+	View,
+	StyleSheet,
+	StatusBar,
+} from 'react-native';
 import NativeDialog from './specs/NativeDialog';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { TextField } from './atoms/TextField';
@@ -60,7 +67,7 @@ const App = () => {
 
 	return (
 		<SafeAreaView style={styles.container}>
-      <StatusBar barStyle={'dark-content'} />
+			<StatusBar barStyle={'dark-content'} />
 			<View style={styles.header}>
 				<Text style={styles.title}>Turbo Module Demo</Text>
 				<Text
