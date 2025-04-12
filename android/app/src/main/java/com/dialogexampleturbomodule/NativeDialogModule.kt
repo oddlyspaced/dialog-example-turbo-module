@@ -18,6 +18,7 @@ class NativeDialogModule(reactContext: ReactApplicationContext) : NativeDialogSp
             builder
                 .setMessage(message)
                 .setTitle("Alert!")
+                .setCancelable(false)
                 .setPositiveButton(positiveLabel) { _, _ ->
                     dialogResultPromise?.resolve("(Android) Tapped on Positive!")
                 }
